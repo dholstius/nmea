@@ -1,0 +1,13 @@
+Package: nmea
+Type: Package
+Title: NMEA Sentence Parser
+Version: 0.1
+Date: 2012-06-15
+Author: David Holstius
+Maintainer: David Holstius <david.holstius@berkeley.edu>
+Description: Useful for parsing NMEA output from a GPS device
+License: FILE
+Collate:
+    'nmea-internal.R'
+    'parse.R'
+    'regex.R'
