@@ -15,11 +15,11 @@ test_that('latitude is parsed correctly', {
 })
 
 test_that('GPGGA sentence is parsed correctly', {
-	x <- c(
+	sentences <- c(
 		'$GPGGA,162947.108,3752.3651,N,12215.8387,W,1,04,4.6,108.6,M,-31.3,M,,0000*6E',
 		'$GPGGA,162948.108,3752.3656,N,12215.8368,W,1,04,4.6,109.0,M,-31.3,M,,0000*60'
 	)	
-	(object <- parse.GPGGA(x, date='2011-06-13'))
+	(object <- parse.GPGGA(sentences, date='2011-06-13'))
 })
 
 expect_warning(object <- parse.GPGGA(sentences))
