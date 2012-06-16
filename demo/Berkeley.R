@@ -1,4 +1,4 @@
-sentences <- c(
+log <- c(
 	'$GPGGA,150102.000,2400.0000,N,12100.0000,E,0,00,0.0,0.0,M,0.0,M,,0000*6E',
 	'$GPGSA,A,1,,,,,,,,,,,,,0.0,0.0,0.0*30',
 	'$GPGSV,1,1,04,20,00,000,32,01,00,000,34,14,00,000,28,32,00,000,29*7D',
@@ -19,10 +19,10 @@ sentences <- c(
 )
 
 # Parse just the GPGGA sentences
-GPGGA <- sentences[grepl('\\$GPGGA', sentences)]
+GPGGA <- log[grepl('\\$GPGGA', log)]
 
 # Must supply a date (in UTC) since none is provided 
-GPS <- parse.GPGGA(sentences[which.GPGGA], date='2012-06-14')
+GPS <- parse.GPGGA(sentences, date='2012-06-14')
 
 # Convert timestamps from UTC to local
 GPS$datetime <- convert.tz(GPS$datetime, to="America/Los_Angeles")
