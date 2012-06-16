@@ -11,3 +11,4 @@ Collate:
     'nmea-internal.R'
     'parse.R'
     'regex.R'
+    'tzone.R'
